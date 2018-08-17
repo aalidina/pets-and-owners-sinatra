@@ -36,7 +36,7 @@ num_owners = Owner.count
       type_of_animal: "dog",
       age: rand(1..20),
       breed: Faker::Dog.breed,
-      owner_id: rand(num_owners)
+      owner_id: rand(1..num_owners)
     )
 end
 
@@ -46,7 +46,7 @@ end
       type_of_animal: "dog",
       age: rand(1..20),
       breed: Faker::Dog.breed,
-      owner_id: rand(num_owners)
+      owner_id: rand(1..num_owners)
     )
 end
 
@@ -56,7 +56,7 @@ end
       type_of_animal: "cat",
       age: rand(1..20),
       breed: Faker::Cat.breed,
-      owner_id: rand(num_owners)
+      owner_id: rand(1..num_owners)
     )
 end
 
@@ -66,7 +66,7 @@ end
       type_of_animal: "dog",
       age: rand(1..20),
       breed: Faker::Dog.breed,
-      owner_id: rand(num_owners)
+      owner_id: rand(1..num_owners)
     )
 end
 
@@ -76,6 +76,6 @@ end
       type_of_animal: "cat",
       age: rand(1..20),
       breed: Faker::Cat.breed,
-      owner_id: rand(num_owners)
+      owner_id: rand(1..num_owners)
     )
 end
