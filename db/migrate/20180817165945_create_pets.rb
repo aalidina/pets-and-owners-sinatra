@@ -4,6 +4,7 @@ class CreatePets < ActiveRecord::Migration
       t.string :name
       t.string :type_of_animal
       t.string :age
+      t.string :breed
       t.integer :owner_id
 
       t.timestamps null: false
