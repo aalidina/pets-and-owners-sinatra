@@ -21,9 +21,20 @@ class Pet < ActiveRecord::Base
   #  Hello! I'm Poppy, I'm 9 years old, and I belong to Walden Macnair
 
   def self.talking_pet(breed_name)
-    Pet.select do |pet|
+    select do |pet|
       if pet.breed == breed_name
-        puts "Hello! I'm #{pet.name}, I'm #{pet.age} years old, and I belong to #{pet.owner.name}"
+      puts  "Hello! I'm #{pet.name}, I'm #{pet.age} years old, and I belong to #{pet.owner.name}"
+      end
+    end
+  end
+
+  def self.find_all_by_attribute(hash = {name: "Garfield"})
+    select do |pet|
+      if pet.name == hash
+        puts "#{pet.name}, #{pet.age}, #{pet.breed}, #{pet.owner.name}"
+      else
+        print "No match found"
+        break
       end
     end
   end
