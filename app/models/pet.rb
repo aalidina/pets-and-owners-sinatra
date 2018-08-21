@@ -8,7 +8,7 @@ class Pet < ActiveRecord::Base
     end
 
   # 2. Build a class method that returns all cats
-  def self.return_all_dogs
+  def self.return_all_cats
      select {|cats| cats.type_of_animal == "cat"}
   end
 
@@ -28,6 +28,12 @@ class Pet < ActiveRecord::Base
     end
   end
 
+
+
+  # 5. BONUS - build a finder method that takes a key/value pair.  The key represents an attribute and the value is its value.
+  #  It should return any pets that match that attribute/value pair.  Example:
+  #  Pet.find_all_by_attribute(name: "Garfield") would return all pets named Garfield.
+
   def self.find_all_by_attribute(hash = {name: "Garfield"})
     select do |pet|
       if pet.name == hash
@@ -38,9 +44,5 @@ class Pet < ActiveRecord::Base
       end
     end
   end
-
-  # 5. BONUS - build a finder method that takes a key/value pair.  The key represents an attribute and the value is its value.
-  #  It should return any pets that match that attribute/value pair.  Example:
-  #  Pet.find_all_by_attribute(name: "Garfield") would return all pets named Garfield.
 
 end
